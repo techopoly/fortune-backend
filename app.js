@@ -9,7 +9,8 @@ const Coin = require('./model/createCoin');
 const createCoin = require('./routes/createCoin')
 const exit = require('./routes/exit');
 const coin = require('./routes/coin');
-const deleteCoin = require('./util/deleteCoin')
+const deleteCoin = require('./util/deleteCoin');
+const { response } = require('express');
 
 console.log('app is running Alhamdulillah');
 const app = express();
@@ -28,7 +29,12 @@ app.use((req, res, next) => {
 app.use(testRoute);
 app.use(createCoin);
 app.use(exit);
-app.use(coin)
+app.use(coin);
+app.use('/', (req, res, next)=>{
+    res.status(200).json({
+        message: 'path not found'
+    })
+} )
 
 
 

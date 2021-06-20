@@ -66,12 +66,18 @@ class Coin {
     startPorcess = () => {
 
         // pra: uz2deb865aq3fjsdhamsq4ys6ihang
+        // pra2: ua1s43mfjm7hkco5vim6u58dh9jajs
         // ishmam: uhgpth8xaedb8i12xmmf54a3gar79r
-        // azwad: uz6sz8umnmwf2b4e65uy7k8m8yx7gj
         // ishmam_desk: uhgpth8xaedb8i12xmmf54a3gar79r
+        //ishmam_2: ucvsdabqdqhf89w3y9r1y8vcnsgwx5
 
-        var p = new Push({
-            user: 'uhgpth8xaedb8i12xmmf54a3gar79r',
+        var p1 = new Push({
+            user: 'ucvsdabqdqhf89w3y9r1y8vcnsgwx5',
+            token: 'as277w258d5osnxptbib3vq489zhv7'
+        })
+
+        var p2 = new Push ({
+            user: 'ua1s43mfjm7hkco5vim6u58dh9jajs',
             token: 'as277w258d5osnxptbib3vq489zhv7'
         })
 
@@ -99,7 +105,17 @@ class Coin {
                     currentPrice = response.data.price;
                     if (currentPrice > threshold * minima) {
                         console.log("Opportunity");
-                        p.send(msg, function (err, result) {
+                        p1.send(msg, function (err, result) {
+                            try {
+                                if (err) {
+                                    throw err
+                                }
+                                console.log(result)
+                            } catch (err) {
+                                console.log(err)
+                            }
+                        });
+                        p2.send(msg, function (err, result) {
                             try {
                                 if (err) {
                                     throw err

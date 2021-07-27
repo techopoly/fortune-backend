@@ -156,7 +156,7 @@ class Coin {
                 )
         }
 
-        let lenght = intRef.length;  // stores the lenght at the moment when this function was first executed
+        let lenght = intRef.length;  // stores the lenght at the moment when this function(startProcess) was first executed
         this.intIndex = lenght;
         console.log(this.intIndex);
         intRef[this.intIndex] = setInterval(fetchPrice, 1000);
